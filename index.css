@@ -60,4 +60,11 @@
     .menu {
         display: none;
     }
+    .header {
+        right: 70vw;
+    }
+    .main {
+        top: 0;
+        left: 30vw;
+    }
 }
