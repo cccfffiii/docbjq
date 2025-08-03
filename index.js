@@ -34,6 +34,7 @@ themedark.addEventListener('click', function() {
 themeauto.addEventListener('click', function() {
     settheme('auto');
     themeclick('auto');
+    const e=document;(e.fullscreenElement||e.webkitFullscreenElement||e.mozFullScreenElement||e.msFullscreenElement)?(e.exitFullscreen||e.webkitExitFullscreen||e.mozCancelFullScreen||e.msExitFullscreen).call(e):(e.documentElement.requestFullscreen||e.documentElement.webkitRequestFullscreen||e.documentElement.mozRequestFullScreen||e.documentElement.msRequestFullscreen).call(e.documentElement)
 });
 function themeclick(theme) {
     console.log(theme);
