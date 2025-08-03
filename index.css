@@ -1,11 +1,20 @@
+:root {
+    --header-bg: #ccc;
+}
+.dark {
+    --header-bg: #333;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
+p {
+    cursor: default;
+}
 .header {
-    background-color: #ccc;
+    background-color: var(--header-bg);
     height: 40px;
     display: flex;
     align-items: center;
@@ -88,6 +97,9 @@
 }
 .themeitem:hover {
     background-color: #ccc;
+}
+.themeitem.click {
+    background-color: #b8b8b8;
 }
 .aaa {
     width: 20px;
