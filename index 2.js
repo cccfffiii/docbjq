@@ -15,28 +15,9 @@ window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change', e =>
        settheme("auto");
    }
 });
-var atheme = '';
-function webviewsettheme(theme) {
-    atheme = theme;
-    if (localStorage.getItem('theme')==='auto') {
-        settheme(theme,false);
-    }
-}
-
-
-
-
-
-
-
-
-function settheme(theme,save = true) {
-    if (save) {
-    localStorage.setItem('theme', theme)        
-    }
-    if (theme === 'dark' || (theme === 'auto' &&(window.matchMedia('(prefers-color-scheme: dark)').matches || atheme === 'dark'))) {
-        document.documentElement.classList.add('dark');
-    } else if (atheme === 'dark') {
+function settheme(theme) {
+    localStorage.setItem('theme', theme)
+    if (theme === 'dark' || (theme === 'auto' && window.matchMedia('(prefers-color-scheme:dark)').matches)) {
         document.documentElement.classList.add('dark');
     } else {
         document.documentElement.classList.remove('dark');
