@@ -1,6 +1,15 @@
 //主题设置相关代码
+const themelight = document.getElementById('theme-light');
+const themedark = document.getElementById('theme-dark');
+const themeauto = document.getElementById('theme-auto');
 const theme = localStorage.getItem("theme") || 'auto';
-settheme(theme);
+if (theme === 'light') {
+    setlightclick();
+} else if (theme === 'dark') {
+    setdarkclick();
+} else if (theme === 'auto') {
+    setautoclick();
+}
 window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change', e => {
     if (localStorage.getItem('theme') === 'auto') {
        settheme("auto");
@@ -14,27 +23,35 @@ function settheme(theme) {
         document.documentElement.classList.remove('dark');
     }
 }
-const themelight = document.getElementById('theme-light');
-const themedark = document.getElementById('theme-dark');
-const themeauto = document.getElementById('theme-auto');
 themelight.addEventListener('click', function() {
+    setlightclick();
+});
+themedark.addEventListener('click', function() {
+    setdarkclick();
+});
+themeauto.addEventListener('click', function() {
+    setautoclick();
+})
+function setlightclick() {
     settheme('light');
     themelight.classList.add('click');
     themedark.classList.remove('click');
     themeauto.classList.remove('click');
-});
-themedark.addEventListener('click', function() {
+}
+function setdarkclick() {
     settheme('dark');
     themelight.classList.remove('click');
     themedark.classList.add('click');
-    themeauto.classList.remove('click');
-});
-themeauto.addEventListener('click', function() {
+    themeauto.classList.remove('click');    
+}
+function setautoclick() {
     settheme('auto');
     themelight.classList.remove('click');
     themedark.classList.remove('click');
-    themeauto.classList.add('click');
-})
+    themeauto.classList.add('click');    
+}
+
+
 
 
 
