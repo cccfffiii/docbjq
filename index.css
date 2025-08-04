@@ -1,8 +1,12 @@
 :root {
-    --header-bg: #ccc;
+    --bg: #fff;
+    --bk: #ddd;
+    --textcolor: ##000;
 }
 .dark {
-    --header-bg: #333;
+    --bg: #111;
+    --bk: #333;
+    --textcolor: #777;
 }
 * {
     margin: 0;
@@ -12,10 +16,13 @@
 }
 p {
     cursor: default;
+    color: var(--textcolor);
 }
 .header {
-    background-color: var(--header-bg);
-    height: 40px;
+    background-color: var(--bg);
+    height: 50px;
+    border-bottom: 1px solid var(--bk);
+    border-right: 1px solid var(--bk);
     display: flex;
     align-items: center;
     position: fixed;
@@ -24,11 +31,12 @@ p {
     left: 0;
 }
 .icon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin: 5px;
 }
 .main {
+    background-color: var(--bg);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -36,28 +44,26 @@ p {
     left: 30vw;
 }
 .aside {
-    background-color: #ddd;
+    background-color: var(--bg);
+    border-right: 1px solid var(--bk);
     padding: 10px;
     width: 30vw;
     height: 100vh;
     position: fixed;
-    top: 40px;
+    top: 50px;
     transition: transform 0.3s ease;
 }
-.menu {
+.menuicon {
+    fill: var(--textcolor);
     width: 30px;
     height: 30px;
-    position: fixed;
-    top: 40px;
-    left: 0;
-    transition: left 0.3s ease;
 }
 @media (max-width: 768px) {
     .header {
         right: 0;
     }
     .main {
-        top: 40px;
+        top: 50px;
         left: 0;
     }
     .aside {
@@ -67,12 +73,9 @@ p {
     .aside.active {
         transform: translateX(0);
     }
-    .aside.active + .menu {
-        left: 70vw;
-    }
 }
 @media (min-width: 769px) {
-    .menu {
+    .menuicon {
         display: none;
     }
 }
@@ -83,9 +86,10 @@ p {
     height: 30px;
     display: flex;
     align-items: center;
-    background-color: #eee;
+    background-color: var(--bg);
     border-radius: 10px;
-    box-shadow: 2px 2px 4px #999;
+    border: 1px solid var(--bk);
+    box-shadow: 2px 2px 4px var(--bk);
 }
 .themeitem {
     height: 30px;
@@ -96,12 +100,13 @@ p {
     border-radius: 10px;
 }
 .themeitem:hover {
-    background-color: #ccc;
+    background-color: var(--bk);
 }
 .themeitem.click {
-    background-color: #b8b8b8;
+    background-color: var(--bk);
 }
-.aaa {
+.themeicon {
     width: 20px;
     height: 20px;
+    fill: var(--textcolor);
 }
