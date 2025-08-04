@@ -30,10 +30,22 @@ p {
     right: 70vw;
     left: 0;
 }
+.menuicon {
+    fill: var(--textcolor);
+    width: 30px;
+    height: 30px;
+}
 .icon {
     width: 40px;
     height: 40px;
     margin: 5px;
+}
+.fullscreenicon{
+    margin-left: auto;
+    margin-right: 10px;
+    fill: var(--textcolor);
+    width: 30px;
+    height: 30px;
 }
 .main {
     background-color: var(--bg);
@@ -52,11 +64,6 @@ p {
     position: fixed;
     top: 50px;
     transition: transform 0.3s ease;
-}
-.menuicon {
-    fill: var(--textcolor);
-    width: 30px;
-    height: 30px;
 }
 @media (max-width: 768px) {
     .header {
