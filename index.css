@@ -50,13 +50,14 @@ p {
 .main {
     background-color: var(--bg);
     padding: 10px;
+    padding-bottom: 90px;
     width: 70vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 30vw;
-  overflow-y: auto; /* 垂直滚动 */
-
+    overflow-y: auto; /* 垂直滚动 */
+    color: var(--textcolor);
 
 }
 .aside {
@@ -75,6 +76,7 @@ p {
     }
     .main {
         width: 100vw;
+        height: calc(100vh - 50px);
         top: 50px;
         left: 0;
     }
